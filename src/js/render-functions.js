@@ -4,6 +4,10 @@ export function renderCustomer(customers, customerHtml) {
       let { id, user } = el;
       const { lastName, company, phoneNumder, email, country, status } =
         customerHtml();
+      const statusClass =
+        status.toLowerCase() === 'active'
+          ? 'status__active'
+          : 'status__inactive';
       if (user.length > 10) {
         user = 'Bob';
       }
@@ -16,7 +20,7 @@ export function renderCustomer(customers, customerHtml) {
             <span class='customer__info--phoneNumder'> ${phoneNumder}</span>
             <span class='customer__info--email'> ${user.toLowerCase()}${email}</span>
             <span class='customer__info--country'> ${country}</span>
-            <span class='customer__info--status'> ${status}</span>
+            <span class='customer__info--status ${statusClass}'> ${status}</span>
           </li>
       `;
     })

@@ -105,11 +105,16 @@ button {
     color: #757575;
 }
 
+.header {
+    margin-bottom: 41px;
+}
+
 .header__title {
     font-weight: 500;
     font-size: 24px;
     color: #000;
-    padding: 41px 47px 51px;
+    padding-top: 41px;
+    padding-left: 20px;
 }
 
 .main__wind {
@@ -124,6 +129,11 @@ button {
     display: block;
 }
 
+.cont__title--search {
+    display: flex;
+    justify-content: space-between;
+}
+
 .active__memb {
     font-weight: 400;
     font-size: 14px;
@@ -132,8 +142,59 @@ button {
     margin-bottom: 40px;
 }
 
+.form {
+    position: relative;
+}
+
+.btn__search {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    border: none;
+    background-color: #f9fbff;
+    cursor: pointer;
+}
+
+.input {
+    width: 216px;
+    align-items: center;
+    padding: 10px 0 10px 40px;
+    border: none;
+    border-radius: 10px;
+    background: #f9fbff;
+}
+
+.input::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    color: #b5b7c0;
+
+}
+
 .back__button {
-    background-color: aqua;
+    display: block;
+    color: #b5b7c0;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 2px 9px;
+    ;
+    background-color: inherit;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* transition: box-shadow 0.3s ease; */
+}
+
+/* .back__button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+} */
+
+.customer__params--title {
+    align-items: center;
 }
 
 .customer__params--title span {
@@ -141,20 +202,97 @@ button {
     font-size: 14px;
     letter-spacing: -0.01em;
     color: #b5b7c0;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
 }
 
 .customer__params--title,
 .custom__info li {
     display: grid;
-    grid-template-columns: 172px 131px 156px 207px 152px 1fr;
-    margin-bottom: 20px;
+    grid-template-columns: 172px 131px 156px 207px 152px 80px;
+    margin-bottom: 14px;
+
 }
+
+.customer__item {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.status {
+    /* border: 1px solid #00b087; */
+    border-radius: 4px;
+    padding: 0 12px;
+    width: 80px;
+    /* height: 29px; */
+    background-color: inherit;
+}
+
+.status__active {
+    border: 1px solid #00b087;
+    border-radius: 4px;
+    padding: 4px 12px;
+    width: 80px;
+    height: 29px;
+    background: rgba(22, 192, 152, 0.38);
+
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #008767;
+    text-align: center;
+
+}
+
+.status__inactive {
+    border: 1px solid #df0404;
+    border-radius: 4px;
+    padding: 4px 12px;
+    width: 80px;
+    height: 29px;
+    background: #ffc5c5;
+
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #df0404;
+    text-align: center;
+}
+
+
+
+/* ========================scroll================================== */
+.scroll__container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 15px;
+}
+
+.scroll__container>.customer__params--title,
+.scroll__container>ul.custom__info {
+    display: grid;
+    min-width: 767px;
+}
+
+/* .scroll__container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+} */
+
+/* ================================================================= */
 
 .pagination__text {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.01em;
     color: #b5b7c0;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 319px) {
@@ -165,7 +303,7 @@ button {
 
 /* =======================tab version============================= */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
 
     .cont__app {
         display: flex;
@@ -186,9 +324,6 @@ button {
 
     .sidebar__btn {
         padding: 11px 9px 11px 12px;
-        /* border-radius: 8px; */
-        /* width: 269px; */
-        /* height: 46px; */
         background-color: orange;
     }
 
@@ -251,13 +386,6 @@ button {
         margin-bottom: 20px;
     }
 
-    /* .customer__params--title,
-    .custom_info li {
-        display: grid;
-        grid-template-columns: 172px 131px 156px 207px 152px 1fr;
-        margin-bottom: 20px;
-    } */
-
     .custom__info li:last-child {
         margin-bottom: 30px;
     }
@@ -307,8 +435,8 @@ button {
     .sidebar__btn {
         background-color: rgb(132, 125, 146);
     }
-}
-
+} */
+/* ===================================================================== */
 /* .cont-app {
   display: flex;
 }
