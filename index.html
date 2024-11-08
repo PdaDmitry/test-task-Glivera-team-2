@@ -15,7 +15,7 @@
 
   <script type="module" crossorigin src="/index.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-CNNbG8jS.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-CILobxB_.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-Cgoc1UHB.css">
 </head>
 
 <body>
@@ -68,7 +68,7 @@
 
     <div class="cont__view">
       <header class="header display__none">
-        <h2 class="header__title ">Hello Evano 👋🏼</h2>
+        <h2 class="header__title">Hello Evano 👋🏼</h2>
       </header>
 
       <main class="main__wind">
@@ -79,27 +79,37 @@
           <h3 class="main__wind--title">Product information.</h3>
         </section>
         <section class="content" id="customers">
-          <div>
+          <div class="cont__title--search">
             <div>
               <h3 class="main__wind--title">All Customers</h3>
               <p class="active__memb">Active Members</p>
             </div>
             <form class="form">
-              <button class="btn-search" type="submit">Search</button>
+              <button class="btn__search" type="submit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                    stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21 21L16.65 16.65" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
               <input class="input" type="text" name="picture" placeholder="Search" />
             </form>
           </div>
-
-          <div class="customer__params--title">
-            <span class="customer__name">Customer Name</span>
-            <span class="company">Company</span>
-            <span class="phone__number">Phone Number</span>
-            <span class="email">Email</span>
-            <span class="country">Country</span>
-            <span class="status">Status</span>
+          <div class="scroll__container">
+            <div class="customer__params--title">
+              <span class="customer__name">Customer Name</span>
+              <span class="company">Company</span>
+              <span class="phone__number">Phone Number</span>
+              <span class="email">Email</span>
+              <span class="country">Country</span>
+              <span class="status">Status</span>
+            </div>
+            <div class="divider"></div>
+            <ul class="custom__info"></ul>
           </div>
-          <div class="divider"></div>
-          <ul class="custom__info"></ul>
+
           <!-- =========================================================== -->
           <section class="pagination">
             <div class="pagination__text"></div>
