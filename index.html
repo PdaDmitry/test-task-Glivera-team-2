@@ -1,128 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/dashboard/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/dashboard/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/dashboard/assets/styles-DvPDDfy5.css">
-  </head>
-  <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/dashboard/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
-  <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/dashboard/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script type="module" crossorigin src="/dashboard/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/dashboard/assets/vendor-CNNbG8jS.js">
+  <link rel="stylesheet" crossorigin href="/dashboard/assets/index-COhZaAkA.css">
+</head>
+
+<body>
+  <div class="cont__app">
+    <section>
+      <!-- sidebar -->
+      <aside class="sidebar">
+        <div class="cont__sidebar">
+          <h2 class="sidebar__title">Dashboard</h2>
+          <ul class="sidebar__list">
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="dashboard">
+                Dashboard
+              </button>
+            </li>
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="product">
+                Product
+              </button>
+            </li>
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="customers">
+                Customers
+              </button>
+            </li>
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="income">
+                Income
+              </button>
+            </li>
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="promote">
+                Promote
+              </button>
+            </li>
+            <li class="sidebar__li">
+              <button class="sidebar__btn" data-content="help">Help</button>
+            </li>
+          </ul>
+        </div>
+        <div class="cont__manager">
+          <img src="data:image/jpeg;base64,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" alt="Evano" width="45" height="42" class="img__manager" />
+          <div class="manager__info">
+            <h3 class="manager__title">Evano</h3>
+            <p class="manager__text">Project Manager</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="cont__view">
+      <header class="header display__none">
+        <h2 class="header__title ">Hello Evano</h2>
+      </header>
+
+      <main class="main__wind">
+        <section class="content" id="dashboard">
+          <h3 class="main__wind--title">Welcome to the Dashboard!</h3>
+        </section>
+        <section class="content" id="product">
+          <h3 class="main__wind--title">Product information.</h3>
+        </section>
+        <section class="content" id="customers">
+          <div>
+            <div>
+              <h3 class="main__wind--title">All Customers</h3>
+              <p class="active__memb">Active Members</p>
+            </div>
+            <form class="form">
+              <input class="input" type="text" name="picture" placeholder="Search" />
+              <button class="btn-search" type="submit">Search</button>
+            </form>
+          </div>
+
+          <div class="customer__params--title">
+            <span class="customer-name">Customer Name</span>
+            <span class="company">Company</span>
+            <span class="phone__number">Phone Number</span>
+            <span class="email">Email</span>
+            <span class="country">Country</span>
+            <span class="status">Status</span>
+          </div>
+          <div class="divider"></div>
+          <ul class="custom__info"></ul>
+          <!-- =========================================================== -->
+          <section class="pagination">
+            <div class="pagination__text"></div>
+            <div class="page__buttons"></div>
+          </section>
+        </section>
+        <section class="content" id="income">
+          <h3 class="main__wind--title">View income statistics here.</h3>
+        </section>
+        <section class="content" id="promote">
+          <h3 class="main__wind--title">Promote your products here.</h3>
+        </section>
+        <section class="content" id="help">
+          <h3 class="main__wind--title">Help and support information here.</h3>
+        </section>
+      </main>
     </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
   </div>
-</section>
+</body>
 
-      <article class="badges">
-  <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
-      </li>
-    </ul>
-  </div>
-</article>
-
-    </main>
-
-    <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
-
-
-  </body>
 </html>
