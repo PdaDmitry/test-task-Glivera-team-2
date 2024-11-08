@@ -112,6 +112,10 @@ button {
     padding: 41px 47px 51px;
 }
 
+.main__wind {
+    padding: 20px;
+}
+
 .content {
     display: none;
 }
@@ -130,6 +134,20 @@ button {
 
 .back__button {
     background-color: aqua;
+}
+
+.customer__params--title span {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #b5b7c0;
+}
+
+.customer__params--title,
+.custom__info li {
+    display: grid;
+    grid-template-columns: 172px 131px 156px 207px 152px 1fr;
+    margin-bottom: 20px;
 }
 
 .pagination__text {
@@ -233,12 +251,12 @@ button {
         margin-bottom: 20px;
     }
 
-    .customer__params--title,
+    /* .customer__params--title,
     .custom_info li {
         display: grid;
         grid-template-columns: 172px 131px 156px 207px 152px 1fr;
         margin-bottom: 20px;
-    }
+    } */
 
     .custom__info li:last-child {
         margin-bottom: 30px;
