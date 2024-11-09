@@ -42,7 +42,8 @@ sidebarButtons.forEach(sidebarButton => {
     }
 
     document.getElementById(targetContent).classList.add('active');
-    header.classList.remove('display__none');
+    contView.classList.remove('display__none');
+    // header.classList.remove('display__none'); //!!!!!!!!!!!!!!
 
     if (targetContent === 'customers') {
       addCustomers(page);
@@ -61,7 +62,8 @@ contents.forEach(section => {
   backButton.addEventListener('click', () => {
     section.classList.remove('active');
     sidebar.classList.remove('display__none');
-    header.classList.add('display__none');
+    contView.classList.remove('display__none');
+    // header.classList.add('display__none'); //!!!!!!!!!!!!!!!!!!1
   });
 });
 // ========================================================================
