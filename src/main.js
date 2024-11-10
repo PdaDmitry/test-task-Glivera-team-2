@@ -16,8 +16,8 @@ const contents = document.querySelectorAll('.content');
 const customersList = document.querySelector('.custom__info');
 const sidebar = document.querySelector('.sidebar'); //!!!!!!!!!!!!!!!!!
 const contView = document.querySelector('.cont__view');
-const header = document.querySelector('.header');
-
+// const header = document.querySelector('.header');
+// const main = document.querySelector('.main__wind');
 // ==========================================================================
 const customBtn = document.getElementById('customers');
 
@@ -43,7 +43,9 @@ sidebarButtons.forEach(sidebarButton => {
 
     document.getElementById(targetContent).classList.add('active');
     contView.classList.remove('display__none');
+
     // header.classList.remove('display__none'); //!!!!!!!!!!!!!!
+    // main.classList.remove('display__none');
 
     if (targetContent === 'customers') {
       addCustomers(page);
@@ -53,17 +55,25 @@ sidebarButtons.forEach(sidebarButton => {
 // ============================Back button for all tabs мobile version========================================
 contents.forEach(section => {
   const backButton = document.createElement('button');
-  sidebar.classList.remove('display__none');
-  sidebar.classList.add('sidebar');
+
   backButton.textContent = 'Back';
   backButton.classList.add('back__button');
   section.prepend(backButton);
 
   backButton.addEventListener('click', () => {
-    section.classList.remove('active');
     sidebar.classList.remove('display__none');
-    contView.classList.remove('display__none');
+    sidebar.classList.add('sidebar');
+
+    if (window.innerWidth <= 767) {
+      contView.classList.add('display__none');
+      // header.classList.add('display__none');
+      // main.classList.add('display__none');
+    }
+    // section.classList.remove('active');
+    // sidebar.classList.remove('display__none');
+    // contView.classList.remove('display__none');
     // header.classList.add('display__none'); //!!!!!!!!!!!!!!!!!!1
+    // main.classList.add('display__none');
   });
 });
 // ========================================================================
