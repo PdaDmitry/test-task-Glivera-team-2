@@ -30,7 +30,7 @@ export function renderCustomer(customers, customerHtml) {
 }
 
 export function renderPaginationText(page) {
-  return `<p clas='pagination__text' >Showing data ${page * 8 - 7} to ${
+  return `<p clas='text' >Showing data ${page * 8 - 7} to ${
     page * 8
   } of  504 entries</p>`;
 }

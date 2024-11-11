@@ -16,8 +16,7 @@ const contents = document.querySelectorAll('.content');
 const customersList = document.querySelector('.custom__info');
 const sidebar = document.querySelector('.sidebar');
 const contView = document.querySelector('.cont__view');
-// const header = document.querySelector('.header');
-// const main = document.querySelector('.main__wind');
+const searchInput = document.querySelector('.input');
 // ==========================================================================
 const customBtn = document.getElementById('customers');
 
@@ -28,6 +27,7 @@ const pageButtonsCont = document.querySelector('.cont__buttons');
 const prevBtn = document.querySelector('.prev__btn');
 const nextBtn = document.querySelector('.next__btn');
 
+let allCustomers = []; //!!!!!!!!
 let page = 1;
 let maxPages;
 // console.log(maxPages);
