@@ -14,7 +14,7 @@ const sidebarList = document.querySelector('.sidebar__list');
 const sidebarButtons = document.querySelectorAll('.sidebar__btn');
 const contents = document.querySelectorAll('.content');
 const customersList = document.querySelector('.custom__info');
-const sidebar = document.querySelector('.sidebar'); //!!!!!!!!!!!!!!!!!
+const sidebar = document.querySelector('.sidebar');
 const contView = document.querySelector('.cont__view');
 // const header = document.querySelector('.header');
 // const main = document.querySelector('.main__wind');
@@ -23,14 +23,14 @@ const customBtn = document.getElementById('customers');
 
 // =============================pagination=============================================
 const paginationElemtText = document.querySelector('.pagination__text');
-const pageButtonsCont = document.querySelector('.page__buttons');
+const pageButtonsCont = document.querySelector('.cont__buttons');
 // const paginationElement = document.querySelector('.page-buttons');
 const prevBtn = document.querySelector('.prev__btn');
 const nextBtn = document.querySelector('.next__btn');
-// let paginText;
 
 let page = 1;
 let maxPages;
+// console.log(maxPages);
 
 sidebarButtons.forEach(sidebarButton => {
   sidebarButton.addEventListener('click', () => {
@@ -43,9 +43,6 @@ sidebarButtons.forEach(sidebarButton => {
 
     document.getElementById(targetContent).classList.add('active');
     contView.classList.remove('display__none');
-
-    // header.classList.remove('display__none'); //!!!!!!!!!!!!!!
-    // main.classList.remove('display__none');
 
     if (targetContent === 'customers') {
       addCustomers(page);
@@ -66,14 +63,7 @@ contents.forEach(section => {
 
     if (window.innerWidth <= 767) {
       contView.classList.add('display__none');
-      // header.classList.add('display__none');
-      // main.classList.add('display__none');
     }
-    // section.classList.remove('active');
-    // sidebar.classList.remove('display__none');
-    // contView.classList.remove('display__none');
-    // header.classList.add('display__none'); //!!!!!!!!!!!!!!!!!!1
-    // main.classList.add('display__none');
   });
 });
 // ========================================================================
@@ -104,30 +94,36 @@ async function renderPagination() {
   const buttons = await renderBattons(page, maxPages);
 
   buttons.forEach(button => {
+    // Apply 'pressed__btn' class to the current page button
+    if (Number(button.textContent) === page) {
+      button.classList.add('pressed__btn');
+    }
+
+    // Add click event listener to each button
     button.addEventListener('click', () => {
       let content = button.textContent;
+      let prevPage = page;
 
       if (content === '>') {
-        if (page < maxPages - 5) {
+        if (page < maxPages) {
           page++;
-          addCustomers(page);
-          renderPaginationText(page);
         }
       } else if (content === '<') {
         if (page > 1) {
           page--;
-          addCustomers(page);
-          renderPaginationText(page);
         }
       } else if (content !== '...') {
-        if (content === maxPages) {
-          page = content;
-        }
-
-        addCustomers(content); //!!!!!!!!!!!!!!!!!
-        renderPaginationText(content); //!!!!!!!!!!!!
+        page = Number(content);
       }
+
+      if (prevPage === page) return;
+
+      // Fetch customers and update the pagination
+      addCustomers(page);
+      renderPaginationText(page);
+      renderPagination(); // Re-render pagination to update buttons
     });
+
     pageButtonsCont.appendChild(button);
   });
 }

@@ -29,8 +29,6 @@ export function renderCustomer(customers, customerHtml) {
   return item;
 }
 
-let currentPage;
-
 export function renderPaginationText(page) {
   return `<p clas='pagination__text' >Showing data ${page * 8 - 7} to ${
     page * 8
@@ -39,50 +37,58 @@ export function renderPaginationText(page) {
 
 export async function renderBattons(page, maxPages) {
   let buttons = [];
-  console.log('page', page);
 
   const prevBtn = document.createElement('button');
   prevBtn.textContent = '<';
   prevBtn.classList.add('prev__btn');
   buttons.push(prevBtn);
 
+  // Determine range of page buttons to show
+  let startPage, endPage;
+
+  // Show a sliding window of 5 buttons
+  if (page <= 3) {
+    startPage = 1;
+    endPage = Math.min(5, maxPages);
+  } else if (page >= maxPages - 2) {
+    startPage = Math.max(maxPages - 4, 1);
+    endPage = maxPages;
+  } else {
+    startPage = page - 2;
+    endPage = page + 2;
+  }
+
+  // Add number buttons dynamically
+  for (let i = startPage; i <= endPage; i++) {
+    const button = document.createElement('button');
+    button.textContent = i;
+    button.classList.add('page__btn');
+    if (i === page) button.classList.add('pressed__btn');
+    buttons.push(button);
+  }
+
+  // Add ellipsis if needed
+  if (endPage < maxPages && page < maxPages - 3) {
+    const ellipsisBtn = document.createElement('button');
+    ellipsisBtn.textContent = '...';
+    ellipsisBtn.classList.add('page__btn');
+    buttons.push(ellipsisBtn);
+  }
+
+  // Add last page button if not in range
+  if (endPage < maxPages) {
+    const lastBtn = document.createElement('button');
+    lastBtn.textContent = maxPages;
+    lastBtn.classList.add('page__btn');
+    // if (page === maxPages) lastBtn.classList.add('pressed__btn'); //!!!!!!!!!!!
+    buttons.push(lastBtn);
+  }
+
+  // Add the next button
   const nextBtn = document.createElement('button');
   nextBtn.textContent = '>';
   nextBtn.classList.add('next__btn');
-
-  let ellipsisBtn = document.createElement('button');
-  if (maxPages - 5 === page) {
-    ellipsisBtn.textContent = maxPages - 1;
-  } else {
-    ellipsisBtn.textContent = '...';
-  }
-  ellipsisBtn.classList.add('page__btn');
-
-  const lastBtn = document.createElement('button');
-  lastBtn.textContent = maxPages;
-  lastBtn.classList.add('page__btn');
-
-  // let startPage, endPage; !!!!!!!!!!!!!!!!!!!!!!!!
-  if (page === maxPages) {
-    for (let i = maxPages - 5; i <= maxPages; i++) {
-      const button = document.createElement('button');
-      button.textContent = i;
-      button.classList.add('page__btn');
-      buttons.push(button);
-    }
-  } else {
-    console.log(page, '+++');
-
-    for (let i = page; i <= page + 3; i++) {
-      const button = document.createElement('button');
-      button.textContent = i;
-      button.classList.add('page__btn');
-      buttons.push(button);
-    }
-  }
-
-  buttons.push(ellipsisBtn, lastBtn, nextBtn);
-  // console.log(buttons);
+  buttons.push(nextBtn);
 
   return buttons;
 }
