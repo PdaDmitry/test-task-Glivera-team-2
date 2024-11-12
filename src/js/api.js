@@ -98,5 +98,4 @@ export const createCustomer = () => {
   };
 };
 
-// export const objCustomer = createCustomer();
 // ===============================================================

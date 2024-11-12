@@ -80,7 +80,6 @@ export async function renderBattons(page, maxPages) {
     const lastBtn = document.createElement('button');
     lastBtn.textContent = maxPages;
     lastBtn.classList.add('page__btn');
-    // if (page === maxPages) lastBtn.classList.add('pressed__btn'); //!!!!!!!!!!!
     buttons.push(lastBtn);
   }
 
