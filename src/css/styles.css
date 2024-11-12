@@ -388,7 +388,7 @@ button {
 
   .sidebar {
     width: 330px;
-    height: 1000px;
+    /* height: 1000px; */
   }
   .sidebar__btn {
     width: 240px;
@@ -425,7 +425,7 @@ button {
 
 @media screen and (min-width: 1158px) {
   .sidebar {
-    height: 1198px;
+    /* height: 1198px; */
     text-align: left;
     padding: 36px 30px 76px;
   }
